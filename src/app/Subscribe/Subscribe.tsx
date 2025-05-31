@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import { createPortal } from "react-dom";
 import SubscribeElement from "./SubscribeElement";
 

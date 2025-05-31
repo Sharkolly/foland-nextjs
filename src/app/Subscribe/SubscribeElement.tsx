@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect } from "react";
 import axios, { AxiosError } from "axios";
-import { useContextStore } from "../Store/Context";
+import { useContextStore } from "@/Components/Store/Context";
 
 const SubscribeElement = () => {
   const [email, setEmail] = useState<string>("");

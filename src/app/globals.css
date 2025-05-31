@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -23,4 +23,84 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+@theme {
+  --color-navy-blue: #01002b;
+  --color-white-half-opacity: #FFFFFF80;
+  --color-cta-grey: #9EA3AE;
+  --color-stroke-grey: #312F4B;
+  --color-low-red: #F3E9E8;
+  --color-semi-navy-blue: #1E40AF;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
+  --color-nav-blue-hover: #0a0ac2;
+  --color-nav-blue-active: #0a0ab2;
+  --color-nav-blue-border: #0a0a2b;
+  --color-nav-blue-text: #ffffff;
+  --color-nav-blue-text-hover: #ffffff;
+  --color-nav-blue-text-active: #ffffff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.bg-linear-gradient {
+  background: linear-gradient(to left, rgba(3, 3, 3, 0.3), rgba(3, 3, 3, 0.3));
+}
+
+.animation-subscribe-modal {
+  animation-name: subscribe;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+}
+
+@keyframes subscribe {
+  0% {
+    transform: translateY(30vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.react-multi-carousel-dot button {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  
+}
+
+.react-multi-carousel-dot--active button {
+  background-color: #01002b !important;
+  border: none;
+  outline: none;
+  transform: scale(1.3) !important;
+}
+
+
+@media(max-width: 1100px){
+  .chat-static{
+    width: 100%;
+    position: static;
+  }
 }
