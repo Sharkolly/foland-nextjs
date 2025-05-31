@@ -35,7 +35,7 @@ type Props = {
   };
 };
 
-export default function Page = ({ params }:  Props) => {
+export default function Page  ({ params }:  Props)  {
   const { owner, tenant } = params;
   const searchParams = useSearchParams();
   const propertyId = searchParams.get("propertyId");
