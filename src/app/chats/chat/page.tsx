@@ -1,4 +1,3 @@
-// rg779@cornell.edu or richardgu.com
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { getSocket } from "@/Components/API/socket";
@@ -28,16 +27,10 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-type Props = {
-  params: {
-    tenant: string;
-    owner: string;
-  };
-};
-
-export default function Page  ({ params }:  Props)  {
-  const { owner, tenant } = params;
+export default function Page() {
   const searchParams = useSearchParams();
+  const tenant = searchParams.get("tenantId");
+  const owner = searchParams.get("landlordId");
   const propertyId = searchParams.get("propertyId");
   // const title = searchParams.get("title");
   // const price = searchParams.get("price");
@@ -57,6 +50,8 @@ export default function Page  ({ params }:  Props)  {
   );
   const [showPicker, setShowPicker] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const chatRef = useRef<HTMLDivElement>(null);
 
   const socket = getSocket();
   const { user } = useContextStore();
@@ -84,7 +79,7 @@ export default function Page  ({ params }:  Props)  {
       setPropertyDetail(Property?.property);
     }
 
-    setCbMessage('Nothing')
+    setCbMessage("Nothing");
     if (!socket.connected) socket.connect();
     socket.on("connect", () => {
       return socket.id;
@@ -123,7 +118,14 @@ export default function Page  ({ params }:  Props)  {
       socket.off("join-room");
       socket.disconnect();
     };
-  }, [data, Property, owner, propertyId, socket,  tenant]);
+  }, [data, Property, owner, propertyId, socket, tenant]);
+
+  useEffect(() => {
+    chatRef.current?.scrollTo({
+      top: chatRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [data]);
 
   const messageInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessageSent(e.target.value);
@@ -211,7 +213,7 @@ export default function Page  ({ params }:  Props)  {
           {/* <div className="flex justify-between py-3 bg-gray-50 px-4 fixed w-auto left-[48.6%] max-2xl:left-[54%] rounded-md border-b-1 right-6 z-10"> */}
 
           {/* Chat Details */}
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center" ref={chatRef}>
             <div className=" flex justify-center items-center ">
               <Image
                 src="/images/Profile_avatar_placeholder_large.png"
@@ -376,5 +378,4 @@ export default function Page  ({ params }:  Props)  {
       <audio ref={audioRef} className="" src="/audio/sms-185447.mp3"></audio>
     </div>
   );
-};
-
+}

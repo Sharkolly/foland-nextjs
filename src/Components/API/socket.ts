@@ -1,11 +1,12 @@
 
 // utils/socket.ts
+import Cookies from 'js-cookie';
 import { io, Socket } from "socket.io-client";
 // import { UseStore } from "../Context/Store";
 
 let socket: Socket;
 
-const token = localStorage.getItem("token");
+const token = Cookies.get('token');
 if (!token) {
 //   throw new Error("I need token");
 }

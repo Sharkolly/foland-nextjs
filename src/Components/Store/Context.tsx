@@ -13,15 +13,10 @@ export const UserDetails = createContext<UserDetailsType | undefined>(
 );
 
 const Context = ({children}: {children: React.ReactNode}) => {
-  // const [isLoggedIn, setIsLoggedIn] = useState(
-    // localStorage.getItem("isLoggedIn")
-  // );
-
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [profilePic, setProfilePic] = useState<File | null>(null);
-  // const [token, setToken] = useState(localStorage.getItem("token"));
   // const [subscribed, setSubscribed] = useState(
   //   localStorage.getItem("isSubscribed")
   // );

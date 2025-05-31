@@ -50,7 +50,7 @@ const Chats = () => {
                 users?.map((userChat: usersType, index: number) => {
                   return (
                     <Link
-                      href={`/chats/${userChat?.roomId}`}
+                      href={`/chats/chat/${userChat?.roomId}`}
                       key={index}
                       className="flex items-center px-2 rounded-md hover:bg-slate-200 justify-between"
                     >
