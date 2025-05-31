@@ -35,7 +35,7 @@ type Props = {
   };
 };
 
-const Chat = ({ params }:  Props) => {
+export default function Page = ({ params }:  Props) => {
   const { owner, tenant } = params;
   const searchParams = useSearchParams();
   const propertyId = searchParams.get("propertyId");
@@ -378,4 +378,3 @@ const Chat = ({ params }:  Props) => {
   );
 };
 
-export default Chat;
