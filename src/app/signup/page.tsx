@@ -63,8 +63,8 @@ const Signup = () => {
     try {
       setIsFetching(true);
       const sendData = await axios.post(
-        "http://localhost:3001/api/foland-realty/auth/signup",
-        // "https://foland-realty-server.onrender.com/api/foland-realty/auth/signup",
+        // "http://localhost:3001/api/foland-realty/auth/signup",
+        "https://foland-realty-server.onrender.com/api/foland-realty/auth/signup",
         formData,
         {
           withCredentials: true,
