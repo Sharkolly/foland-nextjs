@@ -1,19 +1,18 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import API from "@/Components/API/Api";
 import { AxiosError } from "axios";
 import { createContext, useState, useContext, useEffect } from "react";
-import { useQueryUserFunction } from "@/Components/Hooks/useQuery";
+// import { useQueryUserFunction } from "@/Components/Hooks/useQuery";
 import { UserDetailsType, UserDetailsObjectType } from "@/Types/user.types";
 import Cookies from 'js-cookie';
-import {useRouter} from 'next/navigation'
+// import {useRouter} from 'next/navigation'
 
 export const UserDetails = createContext<UserDetailsType | undefined>(
   undefined
 );
 
 const Context = ({children}: {children: React.ReactNode}) => {
-  const router = useRouter();
+  // const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [profilePic, setProfilePic] = useState<File | null>(null);
@@ -37,6 +36,7 @@ const Context = ({children}: {children: React.ReactNode}) => {
       const axiosError = error as AxiosError<{ message?: string }>;
       const errorMessage =
         axiosError.response?.data?.message || "An unexpected error occurred.";
+        console.log(errorMessage);
 // router.push('/Login')
     }
   };
@@ -62,10 +62,6 @@ const Context = ({children}: {children: React.ReactNode}) => {
   return (
     <UserDetails.Provider
       value={{
-        // isLoggedIn,
-        // setIsLoggedIn,
-        // token,
-        // setToken,
         email,
         setEmail,
         password,
