@@ -38,9 +38,9 @@ const Context = ({ children }: { children: React.ReactNode }) => {
     }
   };
   useEffect(() => {
-    if (!["/login", "/signup", '/forgot-password'].includes(pathname)) {
+    if (!["/login", "/signup", "/forgot-password"].includes(pathname)) {
       getUser();
-    };
+    }
   }, [pathname]);
 
   return (
