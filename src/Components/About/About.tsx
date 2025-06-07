@@ -20,7 +20,7 @@ const About = () => {
                 YOUR TRUSTED
                 <br className="" /> REAL ESTATE PLATFORM
               </h1>
-              <p className="text-gray-600 text-[.9em]">
+              <p className="text-white/60 text-[.9em]">
                 Welcome to Foland, where your real estate aspirations meet
                 expert guidance and personalized service. Our journey in the
                 real estate industry has been marked by a deep commitment to
@@ -30,7 +30,7 @@ const About = () => {
             </div>
             <div className="pb-6 tracking-wide leading-7 pl-6 pr-8 pt-7 border-r-2 border-t-2 border-[#484848] rounded-md">
               <h1 className="text-4xl text-white font-bold pb-4">OUR STORY</h1>
-              <p className="text-gray-600 text-[.9em]">
+              <p className="text-white/60 text-[.9em]">
                 Founded by a team of seasoned real estate professionals, Foland
                 was born out of a shared vision: to create a real estate
                 experience that prioritizes the client&apos;s needs above all

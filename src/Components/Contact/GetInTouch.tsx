@@ -25,7 +25,7 @@ const GetInTouch = () => {
     <section>
       <div className="bg-navy-blue">
         <div className="w-[88%] mx-auto ">
-          <h1 className="text-white py-3.5 font-bold text-2xl">
+          <h1 className="text-white py-5 font-bold text-2xl">
             Get In Touch With Foland
           </h1>
         </div>

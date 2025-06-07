@@ -45,7 +45,7 @@ const OurTeam = () => {
         <div className="w-10/12 mx-auto max-md:w-[91%] max-lg:w-[88%] py-16">
           <div className="flex flex-col gap-4">
             <h1 className="text-white text-3xl font-bold">MEET OUR TEAM</h1>
-            <p className="text-gray-500 tracking-wider leading-6 max-md:leading-[1.9]  text-[.9em]">
+            <p className="text-white/60 tracking-wider leading-6 max-md:leading-[1.9]  text-[.9em]">
               Our team is made up of dedicated real estate professionals who
               share a passion for what they do. We are not just agents; we are
               your trusted advisors. Our agents are experienced, knowledgeable,
@@ -67,10 +67,10 @@ const OurTeam = () => {
                   <h3 className="text-white text-2xl font-bold">
                     {member.name}
                   </h3>
-                  <p className="text-gray-600 tracking-wide font-semibold">
+                  <p className="text-white/60 tracking-wide font-semibold">
                     {member.role}
                   </p>
-                  <p className="text-gray-500 text-[.8em]">{member.bio}</p>
+                  <p className="text-white/60 text-[.8em]">{member.bio}</p>
                   <div className="w-full h-[1px] mt-2 bg-gray-700"></div>
                 </div>
               ))}
@@ -82,7 +82,7 @@ const OurTeam = () => {
                   <h1 className="text-4xl text-white leading-13  font-bold">
                     BECOME A PART OF THE TEAM
                   </h1>
-                  <p className="mt-3 mb-5 text-sm text-justify max-lg:text-left leading-[1.8] text-gray-600 max-md:leading-[2.1]  text-[.9em]">
+                  <p className="mt-3 mb-5 text-sm text-justify max-lg:text-left leading-[1.8] text-white/60 max-md:leading-[2.1]  text-[.9em]">
                     &quot;We&apos;re always getting better, forging strong
                     business connections, and valuing every team member as a
                     vital part of our energetic, knowledgeable, and powerful
