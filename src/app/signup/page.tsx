@@ -63,8 +63,8 @@ const Signup = () => {
     try {
       setIsFetching(true);
       const sendData = await axios.post(
-        "http://localhost:3001/api/foland-realty/auth/signup",
-        // "https://foland-realty-server-1.onrender.com/api/foland-realty/auth/signup",
+        // "http://localhost:3001/api/foland-realty/auth/signup",
+        "https://foland-realty-server-1.onrender.com/api/foland-realty/auth/signup",
         formData,
         {
           withCredentials: true,
@@ -77,9 +77,9 @@ const Signup = () => {
       }, 4000);
       if (data.token) {
         const { data: response } = await axios.get(
-          "http://localhost:3001/api/foland-realty/auth/token-verify",
+          // "http://localhost:3001/api/foland-realty/auth/token-verify",
           // {
-          // "https://foland-realty-server.onrender.com/api/foland-realty/auth/token-verify",
+          "https://foland-realty-server.onrender.com/api/foland-realty/auth/token-verify",
           {
             withCredentials: true,
           }
