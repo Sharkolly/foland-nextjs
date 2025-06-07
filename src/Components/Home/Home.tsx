@@ -1,18 +1,11 @@
-// import { NavLink } from "react-router-dom";
-// import Testing from "../Custom/Testing";
 "use client";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import Image2 from ;
-// import Image3 from ;
-// import Image4 from ;
-// import Image5 from "/image/3ee98586-f578-4dfe-9f7a-99578c6279cd.jpeg";
 import Apostrophe from "@/Components/icons/home-testimonial.svg";
 import Renters from "@/Components/icons/home-icon-50k.svg";
 import Properties from "@/Components/icons/home-icon-10k.svg";
 import Link from "next/link";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import Button from "@/Components/Props/Button";
 import Image from "next/image";
@@ -130,7 +123,6 @@ const Home = () => {
         transitionDuration={500}
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-        // deviceType={['desktop',"tablet", "mobile" ]}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
@@ -144,7 +136,7 @@ const Home = () => {
           >
             <div className="w-10/12 mx-auto max-md:w-[90%]">
               <div className="flex flex-col pt-16 max-xl:pt-12 max-md:pt-8 pb-8 gap-2">
-                <motion.div className="w-full flex flex-col gap-3">
+                <div className="w-full flex flex-col gap-3">
                   <h1 className="text-white w-[63%] text-[3.5em] leading-tight tracking-wide font-bold pb-3 max-xl:w-[60%] max-xl:tracking-normal max-xl:text-[3em] max-lg:w-full  max-lg:text-[3em] max-md:text-[2.7em]">
                     {slide.title}
                   </h1>
@@ -221,7 +213,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <motion.div
+                  <div
                     // viewport={{ once: true }}
                     className="flex gap-24 mt-8 max-md:flex-col max-md:gap-16"
                   >
@@ -266,8 +258,8 @@ const Home = () => {
                         </p>
                       </div>
                     </div>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               </div>
             </div>
 

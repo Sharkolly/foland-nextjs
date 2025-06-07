@@ -1,3 +1,4 @@
+'use client'
 import { FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { FaBookmark } from "react-icons/fa";
@@ -9,7 +10,7 @@ import { usePathname } from "next/navigation";
 const PhoneTabs = () => {
   const pathName = usePathname();
   return (
-    <div className="z">
+    <div className="hidden max-md:block">
       <div className="fixed bg-white z-[50] text-navy-blue bottom-0 left-0 right-0 border-t-2 py-6 ">
         <div className=" flex justify-evenly items-center  ">
           <Link

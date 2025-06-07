@@ -5,12 +5,10 @@ import PropertyInsuranceIcon from "@/Components/icons/property insurance.svg";
 import BestPriceIcon from "@/Components/icons/best-price.svg";
 import LowestCommissionIcon from "@/Components/icons/commision.svg";
 import OverallControlIcon from "@/Components/icons/control.svg";
-import { motion } from "framer-motion";
 import Button from "@/Components/Props/Button";
 import Image from "next/image";
 
 const AboutUs = () => {
-  const transition = { ease: "linear", duration: 0.6 };
 
   const AboutUsDetails = [
     {
@@ -50,15 +48,15 @@ const AboutUs = () => {
   return (
     <div className=" mt-10 w-10/12 max-md:w-[91%] mx-auto flex">
       <div className="w-full flex gap-10 mt-10 max-lg:flex-col max-xl:gap-10 max-md:mt-2">
-        <motion.div
-          initial={{ x: -150, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={transition}
-          viewport={{ once: true }}
+        <div
+          // initial={{ x: -150, opacity: 0 }}
+          // whileInView={{ x: 0, opacity: 1 }}
+          // transition={transition}
+          // viewport={{ once: true }}
           className="bg-[#F7F7FD] w-[38%] pt-8 rounded-lg relative max-xl:pt-4 max-xl:w-[40%] max-lg:w-full"
         >
           {/* <div className="bg-[#F7F7FD] w-[35%] pt-8 rounded-lg relative h-[590px] max-md:h-[680px] max-xl:w-[40%] max-lg:w-full"> */}
-          <motion.div className="px-9  flex flex-col gap-5 max-xl:gap-4 max-md:px-7">
+          <div className="px-9  flex flex-col gap-5 max-xl:gap-4 max-md:px-7">
             <h2 className="text-semi-navy-blue text-3xl font-bold">
               The New Way To Find Your New Home
             </h2>
@@ -74,27 +72,19 @@ const AboutUs = () => {
                 <Link href="/properties">Browse Properties</Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
 
           {/* <div className="absolute bottom-0 right-0"> */}
           <div className="flex justify-end">
             <Image src={House} className="max-xl:h-[160px]" alt="House Diagram" />
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ x: 150, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={transition}
-          viewport={{ once: true }}
+        <div
           className="grid grid-cols-2 gap-8 py-7 max-md:pb-0 pt-2 max-md:grid-cols-1 max-lg:grid-cols-2 max-2xl:grid-cols-2  w-[62%] max-lg:w-full"
         >
           {AboutUsDetails.map((item, index) => (
-            <motion.div
-              initial={{ x: item.x, opacity: 0, y: item.y }}
-              whileInView={{ x: 0, opacity: 1, y: 0 }}
-              transition={transition}
-              viewport={{ once: true }}
+            <div
               key={index}
               className=" max-md:border-b-2 max-md:border-gray-200 max-md:pb-7"
             >
@@ -115,9 +105,9 @@ const AboutUs = () => {
                   <p className="">{item.description}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

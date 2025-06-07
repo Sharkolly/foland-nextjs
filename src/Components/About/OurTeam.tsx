@@ -17,13 +17,13 @@ const OurTeam = () => {
       name: "Jideofor Nelson",
       role: "Co-Founder & Front-end Developer",
       img: "/images/Nelson.jpg",
-      bio: "Alice Smith is a real estate agent with 15 years of experience. She specializes in luxury properties and has helped many clients find their dream homes.",
+      bio: "I’m Jideofor Nelson Chidi, a Front-End Web Developer and Designer dedicated to creating sleek, interactive, and user-friendly digital experiences at Foland’s Realty. I’m here to craft a seamless connection between landlords, agents, and tenants through a dynamic and intuitive web interface. I aim to make your journey through our digital ecosystem effortless and enjoyable. So sit back, explore, and experience real estate made simple and smart",
     },
     {
       name: "Olusanya Adebayo Paul",
       img: "/images/Paul.jpg",
       role: "Co-Founder & UI/UX Designer",
-      bio: "Alice Smith is a real estate agent with 15 years of experience. She specializes in luxury properties and has helped many clients find their dream homes.",
+      bio: "Olusanya Adebayo is a skilled UI/UX designer passionate about crafting intuitive digital experiences. At Foland, he helps design user-friendly interfaces that streamline interactions for landlords, tenants, and agents, combining creative design with technical knowledge from his background in electrical engineering.",
     },
     {
       name: "Ituola Praise-Jah Oluwadamilola",
@@ -35,7 +35,7 @@ const OurTeam = () => {
       name: "Adeyemi Ayodeji",
       img: "/images/Deji.jpg",
       role: "Co-Founder & UX Designer",
-      bio: "Alice Smith is a real estate agent with 15 years of experience. She specializes in luxury properties and has helped many clients find their dream homes.",
+      bio: "I’m Adeyemi Ayodeji Emmanuel, a UI/UX designer passionate about creating clean, functional, and user focused digital experiences. I’m excited to be part of the Foland team, tackling real-life housing challenges through smart, human centered design. At Foland Realty, we’re in the business of turning clicks into keys and I’m here to make sure every user journey feels just like home.",
     },
   ];
 
@@ -70,7 +70,7 @@ const OurTeam = () => {
                   <p className="text-gray-600 tracking-wide font-semibold">
                     {member.role}
                   </p>
-                  <p className="text-gray-500 text-[.8em] text-justify">{member.bio}</p>
+                  <p className="text-gray-500 text-[.8em]">{member.bio}</p>
                   <div className="w-full h-[1px] mt-2 bg-gray-700"></div>
                 </div>
               ))}

@@ -8,7 +8,7 @@ import Search from "@/Components/icons/Search.svg";
 import { useState, useEffect } from "react";
 import PropertiesListing from "@/Components/Properties/Properties";
 import Image from "next/image";
-import Coookies from "js-cookie";
+
 
 type filterPropertyType = "Rent" | "All" | "Buy";
 

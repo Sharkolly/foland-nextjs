@@ -5,7 +5,7 @@ import { MdRemoveRedEye } from "react-icons/md";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { useState, useEffect } from "react";
 import axios, { AxiosError } from "axios";
-import { useContextStore } from "@/Components/Store/Context";
+import { useContextStore } from "../../Components/Store/Context";
 import { toast } from "react-toastify";
 import Button from "@/Components/Props/AuthButton";
 import Image from "next/image";
@@ -64,7 +64,7 @@ const Signup = () => {
       setIsFetching(true);
       const sendData = await axios.post(
         // "http://localhost:3001/api/foland-realty/auth/signup",
-        "https://foland-realty-server.onrender.com/api/foland-realty/auth/signup",
+        "https://foland-realty-server-1.onrender.com/api/foland-realty/auth/signup",
         formData,
         {
           withCredentials: true,

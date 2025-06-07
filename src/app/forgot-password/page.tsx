@@ -7,6 +7,7 @@ import Link from "next/link";
 import Button from "@/Components/Props/AuthButton";
 import Image from "next/image";
 import LayoutAuth from "@/Components/Auth/LayoutAuth";
+import {useRouter} from 'next/navigation';
 
 const Reset_Password = () => {
   const [steps, setSteps] = useState<number>(1);
@@ -16,6 +17,8 @@ const Reset_Password = () => {
   const [messageResponse, setMessageResponse] = useState<string>("");
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  const router = useRouter();
 
   const changeShowPasswordStatus = () => {
     setShowPassword(!showPassword);
@@ -29,12 +32,11 @@ const Reset_Password = () => {
     try {
       setIsFetching(true);
       const { data } = await axios.post(
-        "http://localhost:3001/api/foland-realty/auth/forgot-password",
-        // "https://foland-realty-server.onrender.com/auth/forgot-password",
+        // "http://localhost:3001/api/foland-realty/auth/forgot-password",
+        "https://foland-realty-server-1.onrender.com/auth/forgot-password",
         { email }
       );
       setMessageResponse(data.message);
-      console.log(messageResponse);
       setTimeout(() => {
         setSteps(2);
       }, 2500);
@@ -56,7 +58,7 @@ const Reset_Password = () => {
       setIsFetching(true);
       const { data } = await axios.post(
         // "http://localhost:3001/auth/verify-code",
-        "https://foland-realty-server.onrender.com/api/foland-realty/auth/verify-code",
+        "https://foland-realty-server-1.onrender.com/api/foland-realty/auth/verify-code",
 
         {
           code,
@@ -84,14 +86,14 @@ const Reset_Password = () => {
       setIsFetching(true);
       const { data } = await axios.post(
         // "http://localhost:3001/auth/reset-password",
-        "https://foland-realty-server.onrender.com/api/foland-realty/auth/reset-password",
+        "https://foland-realty-server-1.onrender.com/api/foland-realty/auth/reset-password",
         {
           newPassword,
           email,
         }
       );
       setMessageResponse(data.message);
-      location.replace("/login");
+      router.push("/login");
     } catch (error) {
       const axiosError = error as AxiosError<{ message?: string }>;
       const errorMessage =

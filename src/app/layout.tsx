@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Context from "../Components/Store/Context";
 import ReactQueryProvider from "@/Components/Hooks/ReactQueryProvider";
+import Context from "@/Components/Store/Context";
+// import ContextProvider from "@/Components/Store/ContextProvider";
+// import AuthGuard from '@/Components/Auth/AuthGuard';
 
 export const metadata: Metadata = {
   icons: {
@@ -13,20 +15,30 @@ export const metadata: Metadata = {
   },
 };
 
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins'
+});
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
+    <html lang="en" className={poppins.className}>
+      <body className='overflow-x-hidden'
      
       >
         <ReactQueryProvider>
+          {/* <AuthGuard> */}
           <Context>
               <main>{children}</main>
           </Context>
+          {/* </AuthGuard> */}
         </ReactQueryProvider>
       </body>
     </html>

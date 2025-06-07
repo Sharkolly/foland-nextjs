@@ -4,7 +4,7 @@ import  Link  from "next/link";
 import { MdRemoveRedEye } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { IoEyeOffSharp } from "react-icons/io5";
-import { useContextStore } from "@/Components/Store/Context";
+import { useContextStore } from "../../Components/Store/Context";
 import axios, { AxiosError } from "axios";
 import Button from "@/Components/Props/AuthButton";
 import Image from "next/image";
@@ -38,13 +38,14 @@ const Login = () => {
     try {
       setIsFetching(true);
       const { data } = await axios.post(
-        "https://foland-realty-server.onrender.com/api/foland-realty/auth/login",
+        "https://foland-realty-server-1.onrender.com/api/foland-realty/auth/login",
         // "http://localhost:3001/api/foland-realty/auth/login",
         formData,    {
           withCredentials: true,
         }
       );
-
+      
+      console.log();
       if (data.token) {
         const { data: response } = await axios.get(
           // "http://localhost:3001/api/foland-realty/auth/token-verify",
@@ -53,6 +54,7 @@ const Login = () => {
             withCredentials: true,
           }
         );
+        setFormResponse(data?.message || "Login Successful");
         router.push("/properties");
       }
     } catch (error) {

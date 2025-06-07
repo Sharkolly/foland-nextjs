@@ -1,38 +1,31 @@
-import type { NextRequest } from "next/server";
-import {  NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware (req: NextRequest) {
-  console.log(req)
-  const token = req.cookies.get("token")?.value;
-  // const protectedRoutes = [
-  //   "dashboard",
-  //   "profile",
-  //   "properties",
-  //   "add-property",
-  //   "settings",
-  //   "chats",
-  //   "saved-properties",
-  // ];
+const protectedRoutes = ['/dashboard', '/profile','/properties', '/settings'];
+const authPages = ['/login', '/signup'];
 
-  // const guestOnlyRoutes = ["login", "signup"];
+export function middleware(request: NextRequest) {
+  const token = request.cookies.get('token')?.value;
+  const pathname = request.nextUrl.pathname;
 
-  // const pathName = req.nextUrl.pathname;
+  console.log(`📌 Path: ${pathname} | Token: ${token ? "YES" : "NO"}`);
 
-  // if (protectedRoutes.some((route) => pathName.startsWith(route)) && !token) {
-  //   return NextResponse.redirect(new URL("/login", req.url));
-  // }
-  console.log("middleware", token)
-  // if (!token) {
-  //   return NextResponse.redirect(new URL("/login", req.url));
-  // }
-  // if (guestOnlyRoutes.includes(pathName) && token) {
-  //   return NextResponse.redirect(new URL("/properties", req.url));
-  // };
+  // Redirect unauthenticated users from protected routes
+  if (protectedRoutes.some(route => pathname.startsWith(route))) {
+    if (!token) {
+      console.log("🔒 Redirecting to /login");
+      return NextResponse.redirect(new URL('/about', request.url));
+    }
+  }
+
+  // Redirect authenticated users from auth pages
+  if (authPages.includes(pathname) && token) {
+    console.log("➡️ Redirecting to /dashboard");
+    return NextResponse.redirect(new URL('/dashboard', request.url));
+  }
+
   return NextResponse.next();
-};
-
-
+}
 
 export const config = {
-  matcher: ['/:path*',],  
-}
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'], // All routes except static files
+};
